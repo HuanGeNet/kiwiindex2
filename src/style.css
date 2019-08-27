@@ -1,0 +1,570 @@
+/* ------------ 初始化样式 ------------ */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+    letter-spacing: 0.2px;
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+
+/* Reset */
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.float::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    cursor: pointer;
+}
+
+a {
+    color: #2fa0ec;
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover,
+a:focus {
+    color: #74777b;
+}
+
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+/*------------ Color Palette ------------*/
+
+
+/*
+LIGHT ORANGE: #e4644b
+DARK ORANGE: #d05942
+DARK BROWN: #484141
+Menu text: #f7f1e3
+Submenu text: #ae9f9f
+*/
+
+
+/*------------ General Settings ------------*/
+
+
+/* @import url(https://fonts.useso.com/css?family=Montserrat); */
+
+
+/* ··························································· GO ··························································· */
+
+body {
+    /* 解决margin塌陷 */
+    position: absolute;
+    /* 禁止文本内容选中 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* ···················· 搜索框 ···················· */
+
+#search_form {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    z-index: 3;
+}
+
+#search_form #module_form input {
+    width: 100%;
+    height: 40px;
+    line-height: 100%;
+    padding: 0 50px 0 10px;
+    outline: none;
+    border-style: none;
+    background-color: #484141;
+    color: #ae9f9f;
+}
+
+#search_form #module_form input[type="submit"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: url('../images/seek.png') no-repeat;
+    background-size: 25px;
+    background-position: center;
+    border-left: 1px solid #3d3636;
+    padding: 0;
+    cursor: pointer;
+}
+
+#search_form #module_form input[type="submit"]:hover {
+    background-color: #3d3636;
+}
+
+#search_form #module_suggest {
+    position: relative;
+    z-index: 1;
+    background-color: #484141;
+    color: #ae9f9f;
+    border-top: 1px solid #3d3636;
+}
+
+#search_form #module_suggest ul.sug {
+    margin: 0;
+    padding: 0;
+}
+
+#search_form #module_suggest ul.sug>li {
+    box-sizing: content-box;
+    position: relative;
+    cursor: pointer;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #3d3636;
+    transition: border-left 220ms ease-in;
+}
+
+#search_form #module_suggest ul.sug>li span {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-right: 45px;
+    padding-left: 30px;
+    border-left: 6px solid #484141;
+}
+
+#search_form #module_suggest ul.sug>li span:hover {
+    border-left: solid 6px #d05942;
+    background-color: #3d3636;
+}
+
+#search_form #module_suggest ul.sug>li i {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 35px;
+    line-height: 35px;
+    width: 35px;
+    border-left: 1px solid #3d3636;
+    background-color: #484141;
+    text-align: center;
+    font-size: 20px;
+}
+
+#search_form #module_suggest ul.sug>li i:hover {
+    background-color: #3d3636;
+}
+
+#search_form #module_suggest ul.sug>li i::after {
+    content: "+";
+}
+
+#search_form #module_suggest .close {
+    position: relative;
+    cursor: pointer;
+    height: 35px;
+    line-height: 34px;
+    text-align: center;
+    border-top: 1px solid #3d3636;
+}
+
+#search_form #module_suggest .close>ul.engine {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: calc(100% - 50px);
+    cursor: initial;
+}
+
+#search_form #module_suggest .close>ul.engine>li {
+    float: left;
+    width: 35px;
+    height: 34px;
+    background-position: center;
+    background-size: 23px;
+    background-repeat: no-repeat;
+    /* background: #74777b; */
+    /* #ae9f9f */
+    opacity: 0.8;
+}
+
+#search_form #module_suggest .close>ul.engine>li#baidu {
+    background-image: url('../images/engine_baidu.png');
+    background-size: 18px;
+}
+
+#search_form #module_suggest .close>ul.engine>li#sm {
+    background-image: url('../images/engine_sm.png');
+    background-size: 25px;
+}
+
+#search_form #module_suggest .close>ul.engine>li#bing {
+    background-image: url('../images/engine_bing.png');
+    background-size: 20px;
+}
+
+#search_form #module_suggest .close>ul.engine>li#sougou {
+    background-image: url('../images/engine_sougou.png');
+}
+
+#search_form #module_suggest .close>ul.engine>li#so {
+    background-image: url('../images/engine_so.png');
+    background-size: 21px;
+}
+
+#search_form #module_suggest .close>ul.engine>li#google {
+    background-image: url('../images/engine_google.png');
+    background-size: 20px;
+}
+
+#search_form #module_suggest .close>ul.engine>li:hover {
+    background-color: #3d3636;
+}
+
+#search_form #module_suggest .close>ul.engine>i {
+    float: left;
+    width: 1px;
+    height: 34px;
+    background: #3d3636;
+}
+
+#search_form #module_suggest .close>span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 50px;
+    position: absolute;
+    right: 0;
+    border-right: 6px solid #484141;
+    border-left: 1px solid #3d3636;
+}
+
+#search_form #module_suggest .close>span::after {
+    content: "收起";
+}
+
+#search_form #module_suggest .close>span:hover {
+    border-right: solid 6px #d05942;
+    background-color: #3d3636;
+}
+
+
+/*------------ Main Menu ------------*/
+
+
+/* 背景图(bingImage) */
+
+.bingImage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* background-image: url(http://cn.bing.com/ImageResolution.aspx?w=451&h=864); */
+    object-fit: cover;
+}
+
+.mainmenu {
+    opacity: 0.9;
+    position: relative;
+    padding-top: 15%;
+    padding-bottom: 5%;
+    margin: 0 auto;
+    width: 85%;
+    max-width: 450px;
+    z-index: 5;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+
+/* ········· ········· 设置滚动条的样式 ········· ········· */
+
+.mainmenu::-webkit-scrollbar {
+    /* 滚动条整体样式 */
+    /* 高宽分别对应横竖滚动条的尺寸 */
+    /* 宽度 */
+    width: 0;
+    /* 高度 */
+    height: 0;
+}
+
+.mainmenu #navigation {
+    position: relative;
+    padding: 0;
+    z-index: 3;
+}
+
+.mainmenu #navigation>li {
+    background-color: #e4644b;
+    border-top: 1px solid #d05942;
+    height: 48px;
+    color: #f7f1e3;
+    box-sizing: border-box;
+    position: relative;
+    padding: 0 0 0 40px;
+}
+
+.mainmenu #navigation>li:first-child {
+    border-radius: 7px 7px 0 0;
+    border-top: 0;
+}
+
+.mainmenu #navigation>li:last-child {
+    border-radius: 0 0 7px 7px;
+}
+
+.mainmenu #navigation>li span {
+    display: block;
+    line-height: 48px;
+}
+
+.mainmenu #navigation>li .icon {
+    float: left;
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+}
+
+.mainmenu #navigation>li .icon.HOME {
+    background: url(../images/HOME.png) no-repeat;
+    background-size: 20px;
+}
+
+.mainmenu #navigation>li .icon.soundCode {
+    background: url(../images/soundCode.png) no-repeat;
+    background-size: 20px;
+}
+
+.mainmenu #navigation>li .icon.more {
+    background: url(../images/more.png) no-repeat;
+    background-size: 20px;
+}
+
+.mainmenu #navigation>li .icon.key {
+    background: url(../images/key.png) no-repeat;
+    background-size: 20px;
+}
+
+.mainmenu #navigation>li .messages {
+    background: url("../images/messages.png") no-repeat;
+    padding: 0;
+    margin-top: -33px;
+    margin-right: 19px;
+    float: right;
+    display: block;
+    width: 34px;
+    height: 18px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.expand-triangle {
+    content: "";
+    background: url(../images/expand.gif) top left no-repeat;
+    height: 7px;
+    margin-left: -35px;
+    background-position-y: -2px;
+    background-color: #484141;
+}
+
+.mainmenu .wrap {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 10px);
+}
+
+.mainmenu .wrap>p {
+    background-color: rgba(255, 255, 255, 0.25);
+    margin: 0;
+    width: 100%;
+    padding: 0 5px;
+    border-bottom: 1px dotted #444;
+    color: #1a1a1a;
+    font-size: 11px;
+    line-height: 20px;
+    text-align: center;
+    /* 文字溢出禁止换行 */
+    white-space: nowrap;
+    /* 超出部分隐藏 */
+    overflow: hidden;
+    /* 文字溢出部分点点... */
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.mainmenu .wrap>p:nth-of-type(1) {
+    margin-bottom: 5px;
+    border: none;
+}
+
+.mainmenu .wrap>.box {
+    position: relative;
+    background-color: transparent;
+    margin: 0;
+    width: 100%;
+    color: #1a1a1a;
+    font-size: 11px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+    border: none;
+}
+
+.mainmenu .wrap>.box>div,
+.mainmenu .wrap>.box>a {
+    width: calc(100% - 21px);
+    padding: 0 5px;
+    display: block;
+    /* 文字溢出禁止换行 */
+    white-space: nowrap;
+    /* 超出部分隐藏 */
+    overflow: hidden;
+    /* 文字溢出部分点点... */
+    text-overflow: ellipsis;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #1a1a1a;
+}
+
+.mainmenu .wrap>.box>i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.mainmenu .wrap>.box>i::before,
+.mainmenu .wrap>.box>i::after {
+    position: absolute;
+    top: 1px;
+    right: 9px;
+    display: block;
+    content: "";
+    height: 18px;
+    width: 2px;
+    background: #484141;
+}
+
+.mainmenu .wrap>.box>i::before {
+    transform: rotate(45deg);
+}
+
+.mainmenu .wrap>.box>i::after {
+    transform: rotate(-45deg);
+}
+
+.mainmenu .wrap>.box>div>input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+    vertical-align: sub;
+}
+
+.mainmenu .wrap>.box>div>span.but-Download {
+    margin: 0 0 0 10px;
+    padding: 0 5px;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+.mainmenu .wrap>.box>div>span.but-Download:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+
+/*------------ Sub Menu ------------*/
+
+.submenu {
+    box-sizing: border-box;
+    color: #ae9f9f;
+    font-size: 13px;
+    content: " ";
+    background-color: #484141;
+}
+
+.submenu li {
+    line-height: 20px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: -40px;
+    background-color: #484141;
+    border-left: solid 6px #484141;
+    transition: border-left 220ms ease-in;
+}
+
+.submenu a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #ae9f9f;
+}
+
+.submenu .chosen,
+.submenu .chosen:hover {
+    border-left: solid 6px #96d145;
+}
+
+.submenu li:hover {
+    border-left: solid 6px #d05942;
+}
+
+.submenu li span {
+    margin-left: 30px;
+}
