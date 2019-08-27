@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 这是网页的标题 -->
+    <title>Stay hungry! Stay foolish!</title>
+    <!-- ······································································· -->
+    <!-- 引入jQuery外部插件。jquery是一个非常强大的集成方法，几乎每个网页都会用到它 -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <!-- 下面的link标签是在外部引入CSS文件,它定义了美化的样式。一般不懂就不要改、因为这会很复杂 -->
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+    <div class="mainmenu">
+        <!-- 搜索框整个模块，框架、 -->
+        <form id="search_form" action="https://www.baidu.com/s" method="get">
+            <div id="module_form">
+                <!-- 输入内容的关键词输入框 -->
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="text" value="" autocomplete="off" name="wd" placeholder="Hello World ~">
+                <!-- 可以点击的搜索按钮 -->
+                <input type="submit" value="">
+            </div>
+
+            <!-- 词条展示组件,默认是关闭(none)的。当 style="display:block;"> 就会自然展示、方便调试 -->
+            <div id="module_suggest" style="display:none;">
+                <!-- 词条建议组件 -->
+                <ul class="sug">
+                    <!-- 这里的li标签就是一个容器，可以方便的管理一组、 -->
+                    <!-- 这个是js动态部分，直接修改是无效的、 -->
+                    <!-- ··············································· -->
+                    <li>
+                        <!-- span标签是关键词、i标签是右边的“+”，在CSS中可以修改 -->
+                        <span>推荐词条，No.1</span><i></i>
+                    </li>
+                    <li><span>推荐词条，No.2</span><i></i></li>
+                    <li><span>推荐词条，No.3</span><i></i></li>
+                    <li><span>推荐词条，No.4</span><i></i></li>
+                    <li><span>推荐词条，No.5</span><i></i></li>
+                    <!-- ··············································· -->
+                </ul>
+                <div class="close">
+                    <ul class="engine float">
+                        <li id="baidu"></li> <i></i>
+                        <li id="sm"></li> <i></i>
+                        <li id="bing"></li> <i></i>
+                        <!-- <li id="sougou"></li><i></i> -->
+                        <li id="so"></li> <i></i>
+                        <li id="google"></li> <i></i>
+                    </ul>
+                    <!-- 下面span标签里是“收起”字样，这个得在CSS文件内修改、 -->
+                    <!-- 为什么那么麻烦？ 这样做的好处是不可以复制、 -->
+                    <span id="packUp"></span>
+                </div>
+            </div>
+        </form>
+
+        <ul id="navigation" style="display:none;">
+            <!-- 该区域通过js完成加载，请改navDate.js数据、 -->
+        </ul>
+
+        <div class="wrap">
+            <!-- 流量展示 -->
+            <div class="box" data="switch_hi" style="display:none;">
+                
+                <i></i>
+            </div>
+            <div class="box" data="switch_bingImage" style="display:none;">
+                <div>type：
+                    <input type="radio" name="bingImage_type" data-log="0">Src
+                    <input type="radio" name="bingImage_type" data-log="1">Mzt
+                    <span class="but-Download">Download</span>
+                </div>
+                <i></i>
+            </div>
+            <p id="text-cold" style="display:none;"></p>
+            <p id="text-random"></p>
+            <p>© 2019 欢哥网</p>
+        </div>
+    </div>
+    <img class="bingImage" style="display:none;">
+
+    <!-- 插件以及列表数据 -->
+    <script src="./src/navDate.js "></script>
+    <!-- 以下的script标签里面放的是js部分,一般不懂 就不要修改了、会比较乱。 -->
+    <script src="./src/index.js "></script>
+
+
+</body>
+
+</html>
