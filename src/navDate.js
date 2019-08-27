@@ -88,7 +88,7 @@ var navDate = [{
         href: 'http://bigjpg.com'
     }, {
         name: '蓝奏·云存储',
-        href: 'https://pc.woozooo.com'
+        href: 'http://www.lanzou.com/u'
     }, {
         name: '酷安网',
         href: 'http://www.coolapk.com/apk'
