@@ -34,7 +34,7 @@ var navDate = [{
             }, {
         // 这是单个表项(a标签)，有名称(name)、有跳转的地址(href)
         name: 'No.6 Google（镜像）',
-        href: 'https://go.revincx.xyz/',
+        href: 'http://googlefans.ccaeo.com/',
     }]
 }, {
     li: {
