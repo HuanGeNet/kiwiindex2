@@ -51,8 +51,8 @@ var navDate = [{
         name: '高清壁纸',
         href: 'http://a-1.vip/wallpaper'
     }, {
-        name: '宅剧网',
-        href: 'http://www.78big.com'
+        name: 'BiliBili',
+        href: 'https://m.bilibili.com/index.html'
     }, {
         name: 'YouTube',
         href: 'https://m.youtube.com/?hl=zh-CN'
