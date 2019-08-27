@@ -90,8 +90,8 @@ var navDate = [{
         name: '蓝奏·云存储',
         href: 'https://pc.woozooo.com'
     }, {
-        name: '个人前端笔记',
-        href: 'http://a-1.vip/demo'
+        name: '酷安网',
+        href: 'http://www.coolapk.com/apk'
     }, {
         name: '嗯哼？获取一张随机壁纸、',
         href: 'http://api.btstu.cn/sjbz/zsy.php'
